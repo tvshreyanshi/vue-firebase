@@ -28,35 +28,34 @@
 </template>
 <script>
 export default {
-  name: "navigationVue",
+  name: 'navigationVue',
   components: {
   },
   data() {
     return {
-        mobile: null,
-        mobileNav: null,
-        windowWidth: null
-    }
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    };
   },
   created() {
     window.addEventListener('resize', this.checkScreen);
     this.checkScreen();
   },
-  methods:{
+  methods: {
     checkScreen() {
-        this.windowWidth = window.innerWidth;
-        if(this.windowWidth <= 750) {
-            this.mobile = true;
-            return;
-        }
-        this.mobile = false;
-        this.mobileNav = false;
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
         return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
     },
     toggleMobileNav() {
-        this.mobileNav = !this.mobileNav;
-    }
-  }
+      this.mobileNav = !this.mobileNav;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -70,7 +69,7 @@ header {
        font-weight: 500;
        padding: 0 8px;
        transition: 0.3s color ease;
-    
+
        &:hover {
         color: #1eb8b8;
        }
@@ -78,7 +77,7 @@ header {
     nav {
         display: flex;
         padding: 25px 0;
-    
+
         .branding {
             display: flex;
             align-items: center;
@@ -139,7 +138,7 @@ header {
     .mobile-nav-leave-active {
         transition: all 1s ease;
     }
-    .mobile-nav-enter { 
+    .mobile-nav-enter {
         transform: translateX(-250px);
     }
     .mobile-nav-enter-to {

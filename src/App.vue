@@ -3,21 +3,21 @@
     <div class="app">
       <Navigation />
       <router-view/>
-      <Footer />
+      <FooterBar />
     </div>
   </div>
 </template>
 <script>
 import Navigation from './components/Navigation.vue';
-import Footer from './components/Footer.vue';
-export default {
-  components:{
-    Navigation,
-    Footer,
-  }
-}
-</script>
+import FooterBar from './components/FooterBar.vue';
 
+export default {
+  components: {
+    Navigation,
+    FooterBar,
+  },
+};
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
