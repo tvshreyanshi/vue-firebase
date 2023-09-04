@@ -1,16 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    hello
+    <BlogPost :post="welcomeScreen" />
+    <BlogPost :post="post" v-for="(post, index) in sampleBlogPost" :key="index" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import BlogPost from '@/components/BlogPost.vue'
 
 export default {
   name: 'HomeView',
   components: {
+    BlogPost,
+  },
+  data() {
+    return{
+      welcomeScreen: {
+        title: 'Welcome!!',
+        blogPost: 'Weekly blog articles with all things programming including HTML, CSS, JavaScript and more. Register today to never miss a post!',
+        welcomeScreen: true,
+        photo: "coding"
+      },
+      sampleBlogPost: [
+        {
+          title: "This is a Filter Title!",
+          blogHTML: "This is a filter Blog Post title!",
+          blogCoverPhoto: "beautiful-stories",
+        },
+        {
+          title: "This is a Filter Title!",
+          blogHTML: "This is a filter Blog Post title!",
+          blogCoverPhoto: "designed-for-everyone",
+        },
+      ]
+    }
   }
 }
 </script>
