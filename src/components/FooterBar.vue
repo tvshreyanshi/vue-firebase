@@ -48,7 +48,7 @@
 </template>
 <script>
 export default {
-  name: "footerVue",
+  name: 'footerVue',
 };
 </script>
 <style lang="scss" scoped>

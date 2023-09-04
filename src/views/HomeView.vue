@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BlogPost from '@/components/BlogPost.vue'
+import BlogPost from '../components/BlogPost.vue';
 
 export default {
   name: 'HomeView',
@@ -14,26 +14,26 @@ export default {
     BlogPost,
   },
   data() {
-    return{
+    return {
       welcomeScreen: {
         title: 'Welcome!!',
         blogPost: 'Weekly blog articles with all things programming including HTML, CSS, JavaScript and more. Register today to never miss a post!',
         welcomeScreen: true,
-        photo: "coding"
+        photo: 'coding',
       },
       sampleBlogPost: [
         {
-          title: "This is a Filter Title!",
-          blogHTML: "This is a filter Blog Post title!",
-          blogCoverPhoto: "beautiful-stories",
+          title: 'This is a Filter Title!',
+          blogHTML: 'This is a filter Blog Post title!',
+          blogCoverPhoto: 'beautiful-stories',
         },
         {
-          title: "This is a Filter Title!",
-          blogHTML: "This is a filter Blog Post title!",
-          blogCoverPhoto: "designed-for-everyone",
+          title: 'This is a Filter Title!',
+          blogHTML: 'This is a filter Blog Post title!',
+          blogCoverPhoto: 'designed-for-everyone',
         },
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+};
 </script>
