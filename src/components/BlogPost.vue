@@ -7,15 +7,10 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else>{{ post.blogHTML }}</p>
         <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          LogIn/Register<img
-            src="../assets/Icons/right-arrow.png"
-            class="arrow arrow-light"
-        /></router-link>
+          LogIn/Register<font-awesome-icon :icon="['fas', 'arrow-right']" class="arrow arrow-light" />
+        </router-link>
         <router-link class="link" v-else to="#"
-          >View The Post<img
-            src="../assets/Icons/right-arrow.png"
-            class="arrow"
-        /></router-link>
+          >View The Post<font-awesome-icon :icon="['fas', 'arrow-right']" class="arrow" /></router-link>
       </div>
     </div>
     <div class="blog-photo">
