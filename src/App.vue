@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <Navigation />
-      <router-view/>
-      <FooterBar />
+      <Navigation v-if="!navigation" />
+      <router-view  />
+      <FooterBar v-if="!navigation" />
     </div>
   </div>
 </template>
@@ -12,9 +12,31 @@ import Navigation from './components/Navigation.vue';
 import FooterBar from './components/FooterBar.vue';
 
 export default {
+  data() {
+    return {
+      navigation: null,
+    };
+  },
+  watch: {
+    $route() {
+      this.checkRoutes();
+    },
+  },
   components: {
     Navigation,
     FooterBar,
+  },
+  methods: {
+    checkRoutes() {
+      if (this.$route.name === 'LogIn' || this.$route.name === 'Register' || this.$route.name === 'ForgotPassword') {
+        this.navigation = true;
+        return;
+      }
+      this.navigation = false;
+    },
+  },
+  created() {
+    this.checkRoutes();
   },
 };
 </script>
