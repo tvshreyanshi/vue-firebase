@@ -1,10 +1,10 @@
 <template>
     <div class="form-wrap">
         <form class="register">
-            <p class="login-register">Don't have an Account?
-                <router-link class="router-link" :to="{name: 'Register'}">Register</router-link>
+            <p class="login-register">Already have an Account?
+                <router-link class="router-link" :to="{name: 'LogIn'}">LogIn</router-link>
             </p>
-            <h2>LogIn to FireBlogs</h2>
+            <h2>Register to FireBlogs</h2>
             <div class="inputs">
                 <div class="input">
                     <input type="text" placeholder="First Name" v-model="firstName">
@@ -15,6 +15,10 @@
                     <font-awesome-icon :icon="['fas', 'user']" class="icon" />
                 </div>
                 <div class="input">
+                    <input type="text" placeholder="User Name" v-model="userName">
+                    <font-awesome-icon :icon="['fas', 'user']" class="icon" />
+                </div>
+                <div class="input">
                     <input type="text" placeholder="Email" v-model="email">
                     <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
                 </div>
@@ -22,9 +26,8 @@
                     <input type="password" placeholder="Password" v-model="password">
                     <font-awesome-icon :icon="['fas', 'lock']" class="icon" />
                 </div>
-                <router-link class="forgot-password" :to="{name: 'ForgotPassword'}">Forgot your Password?</router-link>
             </div>
-            <button>Sign In</button>
+            <button>Sign Up</button>
             <div class="angle"></div>
         </form>
         <div class="background"></div>
@@ -33,9 +36,23 @@
 <script>
 export default {
   name: 'RegisterView',
+  data() {
+    return {
+      firstName: null,
+      lastName: null,
+      userName: null,
+      email: null,
+      password: null,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
+.register {
+    h2 {
+        max-width: 350px;
+    }
+}
 .form-wrap {
     overflow: hidden;
     display: flex;
